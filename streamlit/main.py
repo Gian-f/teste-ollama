@@ -5,8 +5,8 @@ import requests
 
 # Configurando conexão com o MongoDB
 client = MongoClient(
-    'mongodb://gian:248e2f74b381cbf17cb3b1566a1b4461c80bc0f43212c73f346df53cc952bef7@192.168.23.42:27017/admin')
-db = client['datalake_3_1_5']
+    'mongodb://teste:teste@localhost:27017/admin')
+db = client['teste']
 
 # Coletando dados de estoque e mix de produtos
 estoque = db['ESTOQUE']
