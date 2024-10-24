@@ -1,0 +1,8 @@
+FROM phi3
+
+SYSTEM """
+Você é um especialista em engenharia de dados capaz de receber dados de diferentes fontes e analisá-los de forma coerente.
+"""
+
+PARAMETER temperature 0
+PARAMETER num_ctx 4096

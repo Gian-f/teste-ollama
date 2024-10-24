@@ -1,0 +1,39 @@
+services:
+  ollama:
+    build: ollama
+    container_name: ollama
+    ports:
+      - 11434:11434
+    volumes:
+      - ollama-vol:/ollama-vol
+    entrypoint: [ "/usr/bin/bash", "/pull-phi3.sh" ]
+#    healthcheck:
+#      test: [
+#        "curl --location -- request POST 'http://localhost:11434/api/generate' \
+#         --header, 'Content-Type: application/json' \
+#         --data-urlencode 'model=phi3' \
+#         --data-urlencode 'prompt=Health check prompt'"
+#      ]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 100
+#      start_period: 30s
+
+#  streamlit:
+#    build: streamlit
+#    container_name: streamlit
+#    ports:
+#      - "8501:8501"
+#    depends_on:
+#      ollama:
+#        condition: service_started
+#    volumes:
+#      - streamlit-vol:/streamlit-vol
+#    environment:
+#      - PYTHONUNBUFFERED=1
+
+volumes:
+  ollama-vol:
+    driver: local
+  streamlit-vol:
+    driver: local
